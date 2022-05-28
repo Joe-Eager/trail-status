@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import AppBar from './parts/AppBar'
-import Table from './parts/Table'
+import BasicCard from './parts/BasicCard'
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
@@ -10,10 +10,10 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#40241a',
+      main: '#6d4c41',
     },
     secondary: {
-      main: '#8c9900',
+      main: '#c0ca33',
     },
   },
 })
@@ -24,7 +24,7 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar />
-      <Table />
+      <BasicCard />
     </ThemeProvider>
   </React.StrictMode>
 )

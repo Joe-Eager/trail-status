@@ -10,15 +10,15 @@ export default function BasicCard() {
 
   const cardMaker = (type) => {
     return (
-      <div style={{margin: 20, backgroundColor: '#212121', borderRadius: 24}}>
+      <div style={{ margin: 20, backgroundColor: '#212121', borderRadius: 24, maxWidth: 640 }}>
         <Card
           component="a"
           href={output[type].url}
-          sx={{ minWidth: 275, textDecoration: 'none'}}>
+          sx={{ minWidth: 275, maxWidth: 640, textDecoration: 'none' }}>
           <CardContent>
             <Typography variant="h6" component="div">
-              {output[type].name}{output[type].status ? <CheckCircleIcon color={'secondary'} sx={{ ml: 2 }} /> : <CancelIcon color={'primary'} sx={{ ml: 2 }} />}
-            </Typography>
+              {output[type].name}
+            </Typography>{output[type].status ? <CheckCircleIcon color={'secondary'} /> : <CancelIcon color={'warning'} />}
             <Typography variant="body2">
               {output[type].tweet}
             </Typography>
@@ -29,7 +29,7 @@ export default function BasicCard() {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       {cardMaker('bedford')}
       {cardMaker('eastRim')}
       {cardMaker('hampHill')}

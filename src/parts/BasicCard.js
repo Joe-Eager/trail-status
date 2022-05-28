@@ -10,7 +10,7 @@ export default function BasicCard() {
 
   const cardMaker = (type) => {
     return (
-      <div style={{ margin: 20, backgroundColor: '#212121', borderRadius: 24, maxWidth: 640 }}>
+      <div style={{ display: 'inline-block', margin: '0px 0px 20px 20px', backgroundColor: '#424242', borderRadius: 24, maxWidth: 640 }}>
         <Card
           component="a"
           href={output[type].url}
@@ -29,7 +29,10 @@ export default function BasicCard() {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', marginRight: 20 }}>
+      <Typography variant="body" component="p" sx={{m: 1 }}>
+      Last Updated: {output.update}
+      </Typography>
       {cardMaker('bedford')}
       {cardMaker('eastRim')}
       {cardMaker('hampHill')}

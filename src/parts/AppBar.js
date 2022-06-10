@@ -6,9 +6,9 @@ import * as React from "react";
 
 const ResponsiveAppBar = () => {
   return (
-    <AppBar position="static" id="appBar">
-      <Toolbar disableGutters sx={{ textAlign: "center" }}>
-        <PedalBikeSharpIcon sx={{ ml: 1 }} color={"secondary"} />
+    <AppBar position="static" id="appBar" >
+      <Toolbar disableGutters>
+        <PedalBikeSharpIcon sx={{ ml: 2 }} color={"secondary"} />
         <Typography
           variant="h6"
           sx={{

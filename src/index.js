@@ -5,6 +5,7 @@ import BasicCard from "./parts/BasicCard";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 const theme = createTheme({
   palette: {
@@ -28,6 +29,11 @@ root.render(
       <CssBaseline />
       <AppBar />
       <BasicCard />
+      <div style={{ textAlign: "center" }}>
+        <Typography variant="caption" sx={{ color: "#757575" }}>
+          All statuses are pulled from twitter which makes them very unreliable. 👌
+        </Typography>
+      </div>
     </ThemeProvider>
   </React.StrictMode>
 );

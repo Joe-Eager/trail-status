@@ -28,16 +28,16 @@ export default function BasicCard() {
           sx={{ minWidth: 275, maxWidth: 640, textDecoration: "none" }}
         >
           <CardContent>
-            <Typography variant="h6" component="div">
+            <Typography variant="h6" component="div" sx={{ mb: -0.64 }}>
               {output[type].name}
               {output[type].status ? (
-                <CheckCircleIcon color={"secondary"} sx={{ mb: -0.75, ml: 1 }} />
+                <CheckCircleIcon color={"secondary"} sx={{ mb: -0.64, ml: 1 }} />
               ) : (
-                <CancelIcon color={"warning"} sx={{ mb: -0.75, ml: 1 }} />
+                <CancelIcon color={"warning"} sx={{ mb: -0.64, ml: 1 }} />
               )}
             </Typography>
             <Typography variant="caption" sx={{ ml: -2 }} ><i style={{ color: textColor }}>Last Updated: {output[type].time}</i></Typography>
-            <Typography variant="body2">{output[type].tweet}</Typography>
+            <Typography variant="body2">{output[type].tweet.replace(/&amp;/ig, '&')}</Typography>
           </CardContent>
         </Card>
       </div>
@@ -47,7 +47,7 @@ export default function BasicCard() {
   return (
     <div style={{ textAlign: "center", marginRight: 20 }}>
       <Typography variant="body" component="p" sx={{ m: 1 }}>
-        Last Updated: {output.update}
+        Last Updated: {output.update.time}
       </Typography>
       {cardMaker("bedford")}
       {cardMaker("eastRim")}

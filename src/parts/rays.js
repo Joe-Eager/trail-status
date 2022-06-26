@@ -4,103 +4,103 @@ function timeParse(time) {
     return newTime
 }
 
-const month = new Date().getMonth(),
-    day = new Date().getDay(),
-    hour = new Date().getHours(),
-    min = new Date().getMinutes(),
-    time = parseInt(`${timeParse(hour)}${timeParse(min)}`),
-    update = '21-22 season',
-    holiday = `${new Date().getMonth()}/${new Date().getDate()}`
+function rays(string) {
+    const month = new Date(string).getMonth(),
+        day = new Date(string).getDay(),
+        hour = new Date(string).getHours(),
+        min = new Date(string).getMinutes(),
+        time = `${timeParse(hour)}${timeParse(min)}`,
+        update = '21-22 season',
+        holiday = `${new Date(string).getMonth() + 1}${new Date(string).getDate()}`,
+        closure = /(101)|(1125)|(1225)|(417)/.test(holiday),
+        extended = /(1126)|(1227)|(1228)|(1229)|(1230)|(1231)|(415)/.test(holiday),
+        christmas = /(1224)/.test(holiday),
+        womens = /(218)/.test(holiday),
+        offSeason = /[564789]/.test(month)
 
-const park = {
-    name: "Rays Indoor",
-    time: "",
-    status: true,
-    tweet: "",
-    url: "https://raysmtb.com/prices-hours-directions/"
-}
-
-function season() {
-    switch ((day)) {
-        case 0:
-        case 6:
-            if (time < 900 && time > 2200) {
-                park.status = true
-                park.tweet = 'Open 9:00 am to 10:00 pm'
-            } else {
-                park.status = false
-                park.tweet = 'Open 9:00 am to 10:00 pm'
-            }
-            return park
-        default:
-            if (time < 1200 && time > 2200) {
-                park.status = true
-                park.tweet = 'Open 12:00 pm to 10:00 pm'
-            } else {
-                park.status = false
-                park.tweet = 'Open 12:00 pm to 10:00 pm'
-            }
-            return park
+    const park = {
+        name: "Rays Indoor",
+        time: "",
+        status: true,
+        tweet: "",
+        url: "https://raysmtb.com/prices-hours-directions/"
     }
-}
 
-function offSeason() {
-    switch ((day)) {
-        case 0:
-            if (time < 1600 && time > 2200) {
-                park.status = true
-                park.tweet = 'Open 4:00 pm to 10:00 pm'
-            } else {
-                park.status = false
-                park.tweet = 'Open 4:00 pm to 10:00 pm'
-            }
-            return park
-        default:
-            park.status = false
-            park.tweet = 'Closed today'
-            return park
-    }
-}
+    console.log(christmas)
+    console.log(holiday)
 
-function rays() {
     park.time = update
-    if (/(10\/1)|(11\/25)|(12\/25)|(4\/17)/i.test(holiday)) { // Holiday closures
+    if (closure) { // Holiday closures
         park.status = false
         park.tweet = 'Probably closed for the holiday'
-    } else if (/(11\/26)|(12\/27)|(12\/28)|(12\/29)|(12\/30)|(12\/31)|(4\/15)/i.test(holiday)) {
-        if (time < 900 && time > 2200) {
+        return park
+    } else if (extended) {
+        if (time > 900 && time < 2200) {
             park.status = true
             park.tweet = 'Open 9:00 am to 10:00 pm'
         } else {
             park.status = false
             park.tweet = 'Open 9:00 pm to 10:00 pm'
         }
-    } else if (/(12\/24)/i.test(holiday)) { // Christmas
-        if (time < 1200 && time > 1800) {
+        return park
+    } else if (christmas) { // Christmas
+        console.log(time)
+        if (time > 1200 && time < 1800) {
             park.status = true
-            park.tweet = 'Open 12:00 pm to 6:00 pm\nMerry Christmas!'
+            park.tweet = 'Open 12:00 pm to 6:00 pm'
         } else {
             park.status = false
-            park.tweet = 'Open 12:00 pm to 6:00 pm\nMerry Christmas!'
+            park.tweet = 'Open 12:00 pm to 6:00 pm'
         }
-    } else if (/(2\/18)/i.test(holiday)) { //Women's weekend
-        if (time < 1600 && time > 2200) {
+        return park
+    } else if (womens) { //Women's weekend
+        if (time > 1600 && time < 2200) {
             park.status = true
             park.tweet = 'Open 4:00 pm to 10:00 pm'
         } else {
             park.status = false
             park.tweet = 'Open 4:00 pm to 10:00 pm'
         }
+        return park
     } else {
-        switch (month) {
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-                return offSeason()
-            default:
-                return season()
+        if (offSeason) {
+            switch ((day)) {
+                case 0:
+                    if (time > 1600 && time < 2200) {
+                        park.status = true
+                        park.tweet = 'Open 4:00 pm to 10:00 pm'
+                    } else {
+                        park.status = false
+                        park.tweet = 'Open 4:00 pm to 10:00 pm'
+                    }
+                    return park
+                default:
+                    park.status = false
+                    park.tweet = 'Closed today'
+                    return park
+            }
+        } else {
+            switch ((day)) {
+                case 0:
+                case 6:
+                    if (time > 900 && time < 2200) {
+                        park.status = true
+                        park.tweet = 'Open 9:00 am to 10:00 pm'
+                    } else {
+                        park.status = false
+                        park.tweet = 'Open 9:00 am to 10:00 pm'
+                    }
+                    return park
+                default:
+                    if (time > 1200 && time < 2200) {
+                        park.status = true
+                        park.tweet = 'Open 12:00 pm to 10:00 pm'
+                    } else {
+                        park.status = false
+                        park.tweet = 'Open 12:00 pm to 10:00 pm'
+                    }
+                    return park
+            }
         }
     }
 }

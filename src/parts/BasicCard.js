@@ -54,7 +54,7 @@ export default function BasicCard() {
       {cardMaker(output.eastRim)}
       {cardMaker(output.hampHill)}
       {cardMaker(output.OECR)}
-      {cardMaker(rays())}
+      {cardMaker(rays(new Date()))}
       {cardMaker(output.royalView)}
       {cardMaker(output.vulturesKnob)}
       {cardMaker(output.westCreek)}

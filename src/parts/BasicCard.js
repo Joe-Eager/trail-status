@@ -47,7 +47,7 @@ export default function BasicCard() {
   return (
     <div style={{ textAlign: "center", marginRight: 20 }}>
       <Typography variant="body" component="p" sx={{ m: 1 }} style={{ color: '#757575' }}>
-        {output.update.time.replace(/\s\w*-\d*\s\(\w*\s\w*\s\w*\)/g, '')}
+        {output.update.time}
       </Typography>
       {cardMaker("bedford")}
       {cardMaker("eastRim")}

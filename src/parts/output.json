@@ -1,54 +1,54 @@
 {
   "hampHill": {
     "name": "Hampton Hills",
-    "time": "4.3 days ago",
+    "time": "8.9 days ago",
     "status": true,
     "tweet": "Update: 6/17/2022 - Trails remain OPEN.",
     "url": "https://mobile.twitter.com/SMPmountainbike"
   },
   "eastRim": {
     "name": "East Rim",
-    "time": "8.5 days ago",
+    "time": "21.5 hrs ago",
     "status": true,
-    "tweet": "East Rim Trails are Open and clear of all spiderwebs on 6/13/22. Thanks to the hard working trail volunteers that cleared trees and weed whacked. Trail is primo!!",
+    "tweet": "CVNP East Rim Trail is open Saturday June 25, 2022 Great condition",
     "url": "https://mobile.twitter.com/CVNPmtb"
   },
   "bedford": {
     "name": "Bedford",
-    "time": "2.5 days ago",
+    "time": "Today",
     "status": true,
-    "tweet": "Bedford is OPEN Sunday 6/19.",
+    "tweet": "Bedford MBT is OPEN Sunday 6/26.",
     "url": "https://mobile.twitter.com/CMPmtb"
   },
   "royalView": {
     "name": "Royalview",
-    "time": "Today",
+    "time": "2.0 days ago",
     "status": true,
-    "tweet": "Royalview Trail OPEN 6/21/22",
+    "tweet": "Royalview is open Friday",
     "url": "https://mobile.twitter.com/CMPmtb"
   },
   "westCreek": {
     "name": "West Creek",
     "time": "Today",
     "status": true,
-    "tweet": "West Creek remains OPEN Tuesday, 6/21. Enjoy &amp; stay hydrated.",
+    "tweet": "West Creek remains OPEN today,  Sunday June 26.",
     "url": "https://mobile.twitter.com/CMPmtb"
   },
   "OECR": {
     "name": "Ohio & Erie Canal Reservation",
-    "time": "14.6 days ago",
-    "status": false,
-    "tweet": "Ohio &amp; Erie Canal flow trails are closed today due to rainfall 6/7",
+    "time": "13.8 days ago",
+    "status": true,
+    "tweet": "O&amp;E Flow Trails, open 6/12",
     "url": "https://mobile.twitter.com/CMPmtb"
   },
   "vulturesKnob": {
     "name": "Vultures Knob",
-    "time": "1.1 days ago",
+    "time": "2.7 days ago",
     "status": true,
-    "tweet": "6/20 Trail Status: OPEN - we’ve had some really clutch help clearing the trails. A lot of other area trails haven’t been so lucky!   Instead of riding, maybe go help where you can and bank some trail karma. If you already helped somewhere - come out and ride The Knob. https://t.co/zDaycpaInF",
+    "tweet": "6/23 Trail Status: OPEN - we have heard reports that there’s a tree down a mile and a half from the end of the trail.   Enjoy the weekend out there! https://t.co/6KKyglJmNe",
     "url": "https://mobile.twitter.com/VulturesKnobMTB"
   },
   "update": {
-    "time": "Tue 21 Jun 22 08:41 pm"
+    "time": "Sun 26 Jun 22 09:31 am"
   }
 }

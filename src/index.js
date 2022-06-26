@@ -31,7 +31,7 @@ root.render(
       <BasicCard />
       <div style={{ textAlign: "center" }}>
         <Typography variant="caption" sx={{ color: "#757575" }}>
-          All statuses are pulled from twitter making them very unreliable. 👌
+          My twitter bot sucks so it could be wrong?
         </Typography>
       </div>
     </ThemeProvider>

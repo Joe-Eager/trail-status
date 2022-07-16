@@ -5,6 +5,7 @@ import { CssBaseline } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import BasicCard from './parts/BasicCard';
 import AppBar from './parts/AppBar';
+import Weather from './parts/Weather';
 
 const theme = createTheme({
   palette: {
@@ -33,6 +34,7 @@ root.render(
           My twitter bot sucks so it could be wrong?
         </Typography>
       </div>
+      <Weather />
     </ThemeProvider>
   </React.StrictMode>,
 );

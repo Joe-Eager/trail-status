@@ -7,7 +7,7 @@ import * as React from 'react';
 function ResponsiveAppBar() {
   return (
     <AppBar position="static" id="appBar">
-      <Toolbar disableGutters>
+      <Toolbar sx={{ textAlign: 'center' }} disableGutters>
         <PedalBikeSharpIcon sx={{ ml: 2 }} color="secondary" />
         <Typography
           variant="h6"

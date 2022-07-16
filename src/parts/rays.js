@@ -26,9 +26,6 @@ function rays(string) {
     url: 'https://raysmtb.com/prices-hours-directions/',
   };
 
-  console.log(christmas);
-  console.log(holiday);
-
   park.time = update;
   if (closure) { // Holiday closures
     park.status = false;

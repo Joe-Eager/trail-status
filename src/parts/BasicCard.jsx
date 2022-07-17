@@ -2,11 +2,12 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
+import Fab from '@mui/material/Fab';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import * as React from 'react';
+import Box from '@mui/material/Box';
 import initialize from './output.json';
 import rays from './rays';
 
@@ -16,12 +17,14 @@ const cardMaker = (data) => {
     textColor = '#757575';
   }
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: 'inline-block',
-        margin: '0px 0px 20px 20px',
+        mb: 2,
+        ml: 2,
+        height: '100%',
         backgroundColor: '#424242',
-        borderRadius: 24,
+        borderRadius: 6,
         maxWidth: 640,
       }}
     >
@@ -49,7 +52,7 @@ const cardMaker = (data) => {
           <Typography variant="body2">{data.tweet.replace(/&amp;/ig, '&')}</Typography>
         </CardContent>
       </Card>
-    </div>
+    </Box>
   );
 };
 
@@ -61,21 +64,37 @@ export default function BasicCard() {
   };
   React.useEffect(() => handleClick, []);
   return (
-    <div style={{ textAlign: 'center', marginRight: 20 }}>
-      <Typography variant="body" component="p" sx={{ m: 1 }} style={{ color: '#757575' }}>
+    <Box>
+      <Fab
+        sx={{ position: 'fixed', bottom: 10, left: 10 }}
+        size="medium"
+        color="secondary"
+        onClick={handleClick}
+      >
+        <RefreshIcon />
+      </Fab>
+      <Typography
+        variant="body"
+        component="p"
+        sx={{
+          color: '#757575', width: '100%', textAlign: 'center',
+        }}
+      >
         {output.update.time ? output.update.time : 'Refresh me'}
-        <Button sx={{ ml: 2 }} onClick={handleClick}>
-          <RefreshIcon />
-        </Button>
       </Typography>
-      {cardMaker(output.bedford)}
-      {cardMaker(output.eastRim)}
-      {cardMaker(output.hampHill)}
-      {cardMaker(output.OECR)}
-      {cardMaker(rays(new Date()))}
-      {cardMaker(output.royalView)}
-      {cardMaker(output.vulturesKnob)}
-      {cardMaker(output.westCreek)}
-    </div>
+      <Box sx={{
+        textAlign: 'center', pr: 2, ml: 6, mr: 6,
+      }}
+      >
+        {cardMaker(output.bedford)}
+        {cardMaker(output.eastRim)}
+        {cardMaker(output.hampHill)}
+        {cardMaker(output.OECR)}
+        {cardMaker(rays(new Date()))}
+        {cardMaker(output.royalView)}
+        {cardMaker(output.vulturesKnob)}
+        {cardMaker(output.westCreek)}
+      </Box>
+    </Box>
   );
 }

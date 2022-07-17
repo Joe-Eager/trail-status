@@ -12,6 +12,7 @@ import first from './first.json';
 export default function Weather() {
   const [clouds, setClouds] = React.useState(first);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
   const handleClick = async (event) => {
     setAnchorEl(event.currentTarget);
     const resp = await axios.get('./data/weather.json');
@@ -23,16 +24,21 @@ export default function Weather() {
     setAnchorEl(null);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-Menu' : undefined;
-
   const getIcon = (stuff) => {
     const url = `./icons/${stuff.Day.Icon}.png`;
     return url;
   };
   return (
-    <Box sx={{ position: 'fixed', bottom: 40, right: 40 }}>
-      <Fab size="medium" color="secondary" aria-label="add" onClick={handleClick}>
+    <Box sx={{ position: 'fixed', bottom: 10, right: 10 }}>
+      <Fab
+        size="medium"
+        color="secondary"
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
         <ThunderstormIcon />
       </Fab>
       <Menu
@@ -44,10 +50,13 @@ export default function Weather() {
           vertical: 'bottom',
           horizontal: 'right',
         }}
-        id={id}
-        open={open}
+        id="basic-menu"
         anchorEl={anchorEl}
+        open={open}
         onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
       >
         <MenuItem>Westlake, Oh</MenuItem>
         {clouds.map((temp) => (

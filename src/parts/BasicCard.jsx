@@ -1,13 +1,14 @@
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import * as React from 'react';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import rays from './rays';
 import initialize from './output.json';
+import rays from './rays';
 
 const cardMaker = (data) => {
   let textColor = '#c0ca33';
@@ -58,11 +59,14 @@ export default function BasicCard() {
     const resp = await axios.get('./data/output.json');
     setOutput(resp.data);
   };
+  React.useEffect(() => handleClick, []);
   return (
     <div style={{ textAlign: 'center', marginRight: 20 }}>
       <Typography variant="body" component="p" sx={{ m: 1 }} style={{ color: '#757575' }}>
         {output.update.time ? output.update.time : 'Refresh me'}
-        <RefreshIcon sx={{ mb: -0.75, ml: 2 }} onClick={handleClick} />
+        <Button sx={{ ml: 2 }} onClick={handleClick}>
+          <RefreshIcon />
+        </Button>
       </Typography>
       {cardMaker(output.bedford)}
       {cardMaker(output.eastRim)}

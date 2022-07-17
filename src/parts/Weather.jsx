@@ -4,24 +4,23 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import Divider from '@mui/material/Divider';
-import Menu from '@mui/material/Menu';
+import Dialog from '@mui/material/Dialog';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
 import first from './first.json';
 
 export default function Weather() {
   const [clouds, setClouds] = React.useState(first);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = async (event) => {
-    setAnchorEl(event.currentTarget);
+  const [open, setOpen] = React.useState(false);
+  const handleClick = async () => {
     const resp = await axios.get('./data/weather.json');
     console.log(resp.data);
     setClouds(resp.data);
+    setOpen(true);
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    setOpen(false);
   };
 
   const getIcon = (stuff) => {
@@ -30,34 +29,10 @@ export default function Weather() {
   };
   return (
     <Box sx={{ position: 'fixed', bottom: 10, right: 10 }}>
-      <Fab
-        size="medium"
-        color="secondary"
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
+      <Fab size="medium" color="secondary" onClick={handleClick}>
         <ThunderstormIcon />
       </Fab>
-      <Menu
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
+      <Dialog open={open} onClose={handleClose}>
         <MenuItem>Westlake, Oh</MenuItem>
         {clouds.map((temp) => (
           <Box sx={{ textAlign: 'center' }} key={temp.EpochDate}>
@@ -75,7 +50,7 @@ export default function Weather() {
             </Link>
           </Box>
         ))}
-      </Menu>
+      </Dialog>
     </Box>
   );
 }

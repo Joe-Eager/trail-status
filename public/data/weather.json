@@ -1,0 +1,165 @@
+[
+  {
+    "Date": "2022-07-17T07:00:00-04:00",
+    "EpochDate": 1658055600,
+    "Temperature": {
+      "Minimum": {
+        "Value": 70,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "Maximum": {
+        "Value": 81,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "Day": {
+      "Icon": 15,
+      "IconPhrase": "Thunderstorms",
+      "HasPrecipitation": true,
+      "PrecipitationType": "Rain",
+      "PrecipitationIntensity": "Heavy"
+    },
+    "Night": {
+      "Icon": 15,
+      "IconPhrase": "Thunderstorms",
+      "HasPrecipitation": true,
+      "PrecipitationType": "Rain",
+      "PrecipitationIntensity": "Heavy"
+    },
+    "Sources": [
+      "AccuWeather"
+    ],
+    "MobileLink": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=1&lang=en-us",
+    "Link": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=1&lang=en-us"
+  },
+  {
+    "Date": "2022-07-18T07:00:00-04:00",
+    "EpochDate": 1658142000,
+    "Temperature": {
+      "Minimum": {
+        "Value": 67,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "Maximum": {
+        "Value": 80,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "Day": {
+      "Icon": 15,
+      "IconPhrase": "Thunderstorms",
+      "HasPrecipitation": true,
+      "PrecipitationType": "Rain",
+      "PrecipitationIntensity": "Moderate"
+    },
+    "Night": {
+      "Icon": 33,
+      "IconPhrase": "Clear",
+      "HasPrecipitation": false
+    },
+    "Sources": [
+      "AccuWeather"
+    ],
+    "MobileLink": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=2&lang=en-us",
+    "Link": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=2&lang=en-us"
+  },
+  {
+    "Date": "2022-07-19T07:00:00-04:00",
+    "EpochDate": 1658228400,
+    "Temperature": {
+      "Minimum": {
+        "Value": 72,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "Maximum": {
+        "Value": 88,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "Day": {
+      "Icon": 2,
+      "IconPhrase": "Mostly sunny",
+      "HasPrecipitation": false
+    },
+    "Night": {
+      "Icon": 36,
+      "IconPhrase": "Intermittent clouds",
+      "HasPrecipitation": false
+    },
+    "Sources": [
+      "AccuWeather"
+    ],
+    "MobileLink": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=3&lang=en-us",
+    "Link": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=3&lang=en-us"
+  },
+  {
+    "Date": "2022-07-20T07:00:00-04:00",
+    "EpochDate": 1658314800,
+    "Temperature": {
+      "Minimum": {
+        "Value": 72,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "Maximum": {
+        "Value": 92,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "Day": {
+      "Icon": 3,
+      "IconPhrase": "Partly sunny",
+      "HasPrecipitation": true,
+      "PrecipitationType": "Rain",
+      "PrecipitationIntensity": "Moderate"
+    },
+    "Night": {
+      "Icon": 35,
+      "IconPhrase": "Partly cloudy",
+      "HasPrecipitation": false
+    },
+    "Sources": [
+      "AccuWeather"
+    ],
+    "MobileLink": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=4&lang=en-us",
+    "Link": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=4&lang=en-us"
+  },
+  {
+    "Date": "2022-07-21T07:00:00-04:00",
+    "EpochDate": 1658401200,
+    "Temperature": {
+      "Minimum": {
+        "Value": 69,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "Maximum": {
+        "Value": 84,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "Day": {
+      "Icon": 4,
+      "IconPhrase": "Intermittent clouds",
+      "HasPrecipitation": false
+    },
+    "Night": {
+      "Icon": 33,
+      "IconPhrase": "Clear",
+      "HasPrecipitation": false
+    },
+    "Sources": [
+      "AccuWeather"
+    ],
+    "MobileLink": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=5&lang=en-us",
+    "Link": "http://www.accuweather.com/en/us/westlake-oh/44145/daily-weather-forecast/2237651?day=5&lang=en-us"
+  }
+]

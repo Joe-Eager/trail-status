@@ -10,13 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 export default function Weather() {
   const [clouds, setClouds] = React.useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  axios.get('./data/weather.json').then((resp) => { setClouds(resp.data); });
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    axios.get('http://dataservice.accuweather.com/forecasts/v1/daily/5day/2237651?apikey=v1Ug0Fpwt17gIzfnBQgCXGpBtEWnkXGO')
-      .then((resp) => {
-        setClouds(resp.data.DailyForecasts);
-      });
   };
 
   const handleClose = () => {
@@ -31,7 +27,7 @@ export default function Weather() {
     return url;
   };
   return (
-    <Box sx={{ position: 'absolute', bottom: 40, right: 40 }}>
+    <Box sx={{ position: 'fixed', bottom: 40, right: 40 }}>
       <Fab size="medium" color="secondary" aria-label="add" onClick={handleClick}>
         <ThunderstormIcon />
       </Fab>
@@ -54,14 +50,12 @@ export default function Weather() {
           <Box sx={{ textAlign: 'center' }} key={temp.EpochDate}>
             <Divider />
             <MenuItem>
-              {new Date(temp.EpochDate * 1000).toDateString() === new Date().toDateString()
+              {new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' }) === new Date().toLocaleString('en-us', { weekday: 'long' })
                 ? 'Today'
-                : new Date(temp.EpochDate * 1000).toDateString().replace(/\d{4}/, '')}
+                : new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' })}
             </MenuItem>
             <MenuItem>
               <img src={getIcon(temp)} alt={temp.Day.IconPhrase} />
-            </MenuItem>
-            <MenuItem>
               {`${temp.Temperature.Maximum.Value} °F / ${temp.Temperature.Minimum.Value} °F`}
             </MenuItem>
           </Box>

@@ -6,6 +6,7 @@ import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import Divider from '@mui/material/Divider';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Link from '@mui/material/Link';
 import first from './first.json';
 
 export default function Weather() {
@@ -51,16 +52,18 @@ export default function Weather() {
         <MenuItem>Westlake, Oh</MenuItem>
         {clouds.map((temp) => (
           <Box sx={{ textAlign: 'center' }} key={temp.EpochDate}>
-            <Divider />
-            <MenuItem>
-              {new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' }) === new Date().toLocaleString('en-us', { weekday: 'long' })
-                ? 'Today'
-                : new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' })}
-            </MenuItem>
-            <MenuItem>
-              <img src={getIcon(temp)} alt={temp.Day.IconPhrase} />
-              {`${temp.Temperature.Maximum.Value} °F / ${temp.Temperature.Minimum.Value} °F`}
-            </MenuItem>
+            <Link href={temp.Link} sx={{ textDecoration: 'none', color: 'white' }}>
+              <Divider />
+              <MenuItem>
+                <Box sx={{ width: '100%' }}>
+                  {new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' }) === new Date().toLocaleString('en-us', { weekday: 'long' })
+                    ? 'Today'
+                    : new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' })}
+                </Box>
+                <img src={getIcon(temp)} alt={temp.Day.IconPhrase} />
+                {`${temp.Temperature.Maximum.Value} °F / ${temp.Temperature.Minimum.Value} °F`}
+              </MenuItem>
+            </Link>
           </Box>
         ))}
       </Menu>

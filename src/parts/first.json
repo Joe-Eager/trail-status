@@ -4,12 +4,12 @@
     "EpochDate": 1658055600,
     "Temperature": {
       "Minimum": {
-        "Value": 70,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       },
       "Maximum": {
-        "Value": 81,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       }
@@ -39,12 +39,12 @@
     "EpochDate": 1658142000,
     "Temperature": {
       "Minimum": {
-        "Value": 68,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       },
       "Maximum": {
-        "Value": 80,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       }
@@ -72,12 +72,12 @@
     "EpochDate": 1658228400,
     "Temperature": {
       "Minimum": {
-        "Value": 72,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       },
       "Maximum": {
-        "Value": 88,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       }
@@ -103,12 +103,12 @@
     "EpochDate": 1658314800,
     "Temperature": {
       "Minimum": {
-        "Value": 72,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       },
       "Maximum": {
-        "Value": 92,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       }
@@ -141,7 +141,7 @@
         "UnitType": 18
       },
       "Maximum": {
-        "Value": 84,
+        "Value": 69,
         "Unit": "F",
         "UnitType": 18
       }

@@ -5,7 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import * as React from 'react';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import rays from './rays';
+import initialize from './output.json';
 
 const cardMaker = (data) => {
   let textColor = '#c0ca33';
@@ -50,14 +52,17 @@ const cardMaker = (data) => {
   );
 };
 
-let output;
-axios.get('./data/output.json').then((resp) => { output = resp.data; });
-
 export default function BasicCard() {
+  const [output, setOutput] = React.useState(initialize);
+  const handleClick = async () => {
+    const resp = await axios.get('./data/output.json');
+    setOutput(resp.data);
+  };
   return (
     <div style={{ textAlign: 'center', marginRight: 20 }}>
       <Typography variant="body" component="p" sx={{ m: 1 }} style={{ color: '#757575' }}>
-        {output.update.time}
+        {output.update.time ? output.update.time : 'Refresh me'}
+        <RefreshIcon sx={{ mb: -0.75, ml: 2 }} onClick={handleClick} />
       </Typography>
       {cardMaker(output.bedford)}
       {cardMaker(output.eastRim)}

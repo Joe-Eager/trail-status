@@ -6,13 +6,16 @@ import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import Divider from '@mui/material/Divider';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import first from './first.json';
 
 export default function Weather() {
-  const [clouds, setClouds] = React.useState([]);
+  const [clouds, setClouds] = React.useState(first);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  axios.get('./data/weather.json').then((resp) => { setClouds(resp.data); });
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     setAnchorEl(event.currentTarget);
+    const resp = await axios.get('./data/weather.json');
+    console.log(resp.data);
+    setClouds(resp.data);
   };
 
   const handleClose = () => {

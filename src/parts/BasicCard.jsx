@@ -1,8 +1,6 @@
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import RefreshIcon from '@mui/icons-material/Refresh';
 import Card from '@mui/material/Card';
-import Fab from '@mui/material/Fab';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
@@ -65,14 +63,6 @@ export default function BasicCard() {
   React.useEffect(() => handleClick, []);
   return (
     <Box>
-      <Fab
-        sx={{ position: 'fixed', bottom: 10, left: 10 }}
-        size="medium"
-        color="secondary"
-        onClick={handleClick}
-      >
-        <RefreshIcon />
-      </Fab>
       <Typography
         variant="body"
         component="p"

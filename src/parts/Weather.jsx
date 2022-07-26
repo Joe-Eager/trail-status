@@ -44,7 +44,7 @@ export default function Weather() {
                     ? 'Today'
                     : new Date(temp.EpochDate * 1000).toLocaleString('en-us', { weekday: 'long' })}
                 </Box>
-                <img src={getIcon(temp)} alt={temp.Day.IconPhrase} />
+                <img src={getIcon(temp)} alt={temp.Day.IconPhrase} style={{ height: 40 }} />
                 {`${temp.Temperature.Maximum.Value} °F / ${temp.Temperature.Minimum.Value} °F`}
               </MenuItem>
             </Link>
